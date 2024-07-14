@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert Text</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* Default font */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 150vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        textarea {
+            width: 80%;
+            margin: 20px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        p {
+            font-family: 'Times New Roman', Times, serif, sans-serif; /* Default font */
+            width: 80%;
+            padding: 10px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            white-space: pre-wrap; /* Preserve whitespace and line breaks */
+        }
+    </style>
+</head>
+<body>
+    <textarea id="para" rows="10" cols="50"></textarea>
+    <button id="sub-btn" onclick="changevalue();">Convert</button>
+    <p id="para-post">Changed Text here</p>
+    <button id="copy-btn" onclick="copyText();">Copy to Clipboard</button>
+
+    <script type="text/javascript">
+        function changevalue() {
+            var para = document.getElementById("para").value;
+            
+            // Replace 𝐏𝐚𝐜𝐤𝐚𝐠𝐞 font characters with normal characters
+            para = para.replace(/𝐀/g, "A").replace(/𝐁/g, "B").replace(/𝐂/g, "C")
+                       .replace(/𝐃/g, "D").replace(/𝐄/g, "E").replace(/𝐅/g, "F")
+                       .replace(/𝐆/g, "G").replace(/𝐇/g, "H").replace(/𝐈/g, "I")
+                       .replace(/𝐉/g, "J").replace(/𝐊/g, "K").replace(/𝐋/g, "L")
+                       .replace(/𝐌/g, "M").replace(/𝐍/g, "N").replace(/𝐎/g, "O")
+                       .replace(/𝐏/g, "P").replace(/𝐐/g, "Q").replace(/𝐑/g, "R")
+                       .replace(/𝐒/g, "S").replace(/𝐓/g, "T").replace(/𝐔/g, "U")
+                       .replace(/𝐕/g, "V").replace(/𝐖/g, "W").replace(/𝐗/g, "X")
+                       .replace(/𝐘/g, "Y").replace(/𝐙/g, "Z")
+                       .replace(/𝐚/g, "a").replace(/𝐛/g, "b").replace(/𝐜/g, "c")
+                       .replace(/𝐝/g, "d").replace(/𝐞/g, "e").replace(/𝐟/g, "f")
+                       .replace(/𝐠/g, "g").replace(/𝐡/g, "h").replace(/𝐢/g, "i")
+                       .replace(/𝐣/g, "j").replace(/𝐤/g, "k").replace(/𝐥/g, "l")
+                       .replace(/𝐦/g, "m").replace(/𝐧/g, "n").replace(/𝐨/g, "o")
+                       .replace(/𝐩/g, "p").replace(/𝐪/g, "q").replace(/𝐫/g, "r")
+                       .replace(/𝐬/g, "s").replace(/𝐭/g, "t").replace(/𝐮/g, "u")
+                       .replace(/𝐯/g, "v").replace(/𝐰/g, "w").replace(/𝐱/g, "x")
+                       .replace(/𝐲/g, "y").replace(/𝐳/g, "z")
+                       .replace(/𝟎/g, "0").replace(/𝟏/g, "1").replace(/𝟐/g, "2")
+                       .replace(/𝟑/g, "3").replace(/𝟒/g, "4").replace(/𝟓/g, "5")
+                       .replace(/𝟔/g, "6").replace(/𝟕/g, "7").replace(/𝟖/g, "8")
+                       .replace(/𝟗/g, "9")
+                       .replace(/𝐁/g, "B").replace(/𝐫/g, "r").replace(/𝐚/g, "a")
+                       .replace(/𝐜/g, "c").replace(/𝐧/g, "n").replace(/𝐝/g, "d")
+                       .replace(/𝐄/g, "E").replace(/𝐟/g, "f").replace(/𝐠/g, "g")
+                       .replace(/𝐡/g, "h").replace(/𝐢/g, "i").replace(/𝐣/g, "j")
+                       .replace(/𝐤/g, "k").replace(/𝐥/g, "l").replace(/𝐦/g, "m")
+                       .replace(/𝐨/g, "o").replace(/𝐩/g, "p").replace(/𝐪/g, "q")
+                       .replace(/𝐬/g, "s").replace(/𝐭/g, "t").replace(/𝐮/g, "u")
+                       .replace(/𝐯/g, "v").replace(/𝐰/g, "w").replace(/𝐱/g, "x")
+                       .replace(/𝐲/g, "y").replace(/𝐳/g, "z")
+                       .replace(/!/g, "!").replace(/@/g, "@").replace(/#/g, "#")
+                       .replace(/%/g, "%").replace(/\^/g, "^").replace(/&/g, "&")
+                       .replace(/\*/g, "*").replace(/\(/g, "(").replace(/\)/g, ")")
+                       .replace(/_/g, "_").replace(/\+/g, "+").replace(/\-/g, "-")
+                       .replace(/\=/g, "=").replace(/\[/g, "[").replace(/\]/g, "]")
+                       .replace(/{/g, "{").replace(/}/g, "}").replace(/;/g, ";")
+                       .replace(/:/g, ":").replace(/'/g, "'").replace(/"/g, "\"")
+                       .replace(/</g, "<").replace(/>/g, ">").replace(/,/g, ",")
+                       .replace(/\./g, ".").replace(/\?/g, "?").replace(/\//g, "/")
+                       .replace(/\|/g, "|").replace(/\\/g, "\\").replace(/~/g, "~")
+            
+            // Replace 𝗢𝘂𝗿 𝘀𝗲𝗿𝘃𝗶𝗰𝗲 𝗶𝗻𝗰𝗹𝘂𝗱𝗲𝘀 with normal characters
+            .replace(/𝗔/g, "A").replace(/𝗕/g, "B").replace(/𝗖/g, "C")
+            .replace(/𝗗/g, "D").replace(/𝗘/g, "E").replace(/𝗙/g, "F")
+            .replace(/𝗚/g, "G").replace(/𝗛/g, "H").replace(/𝗜/g, "I")
+            .replace(/𝗝/g, "J").replace(/𝗞/g, "K").replace(/𝗟/g, "L")
+            .replace(/𝗠/g, "M").replace(/𝗡/g, "N").replace(/𝗢/g, "O")
+            .replace(/𝗣/g, "P").replace(/𝗤/g, "Q").replace(/𝗥/g, "R")
+            .replace(/𝗦/g, "S").replace(/𝗧/g, "T").replace(/𝗨/g, "U")
+            .replace(/𝗩/g, "V").replace(/𝗪/g, "W").replace(/𝗫/g, "X")
+            .replace(/𝗬/g, "Y").replace(/𝗭/g, "Z")
+            .replace(/𝗮/g, "a").replace(/𝗯/g, "b").replace(/𝗰/g, "c")
+            .replace(/𝗱/g, "d").replace(/𝗲/g, "e").replace(/𝗳/g, "f")
+            .replace(/𝗴/g, "g").replace(/𝗵/g, "h").replace(/𝗶/g, "i")
+            .replace(/𝗷/g, "j").replace(/𝗸/g, "k").replace(/𝗹/g, "l")
+            .replace(/𝗺/g, "m").replace(/𝗻/g, "n").replace(/𝗼/g, "o")
+            .replace(/𝗽/g, "p").replace(/𝗾/g, "q").replace(/𝗿/g, "r")
+            .replace(/𝘀/g, "s").replace(/𝘁/g, "t").replace(/𝘂/g, "u")
+            .replace(/𝘃/g, "v").replace(/𝘄/g, "w").replace(/𝘅/g, "x")
+            .replace(/𝘆/g, "y").replace(/𝘇/g, "z")
+            .replace(/𝟬/g, "0").replace(/𝟭/g, "1").replace(/𝟮/g, "2")
+            .replace(/𝟯/g, "3").replace(/𝟰/g, "4").replace(/𝟱/g, "5")
+            .replace(/𝟲/g, "6").replace(/𝟳/g, "7").replace(/𝟴/g, "8")
+            .replace(/𝟵/g, "9");
+
+            // Update paragraph content
+            document.getElementById("para-post").textContent = para;
+        }
+        function copyText() {
+        var paraPost = document.getElementById("para-post");
+        var range = document.createRange();
+        range.selectNode(paraPost);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        document.execCommand("copy");
+        alert("Text copied to clipboard!");
+    }
+    </script>
+</body>
+</html>
