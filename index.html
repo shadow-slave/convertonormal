@@ -48,7 +48,7 @@
     <textarea id="para" rows="10" cols="50"></textarea>
     <button id="sub-btn" onclick="changevalue();">Convert</button>
     <p id="para-post">Changed Text here</p>
-    <button id="copy-btn" onclick="copyText();">Copy to Clipboard</button>
+
 
     <script type="text/javascript">
         function changevalue() {
@@ -124,15 +124,7 @@
             // Update paragraph content
             document.getElementById("para-post").textContent = para;
         }
-        function copyText() {
-        var paraPost = document.getElementById("para-post");
-        var range = document.createRange();
-        range.selectNode(paraPost);
-        window.getSelection().removeAllRanges();
-        window.getSelection().addRange(range);
-        document.execCommand("copy");
-        alert("Text copied to clipboard!");
-    }
+       
     </script>
 </body>
 </html>
